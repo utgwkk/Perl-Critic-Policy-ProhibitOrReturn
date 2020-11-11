@@ -42,16 +42,30 @@
       },
       "runtime" : {
          "requires" : {
+            "Perl::Critic::Policy" : "0",
+            "Perl::Critic::Utils" : "0",
             "perl" : "5.008001"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Perl::Critic" : "0"
          }
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/utgwkk/Perl-Critic-Policy-ProhibitOrReturn/issues"
+      },
+      "homepage" : "https://github.com/utgwkk/Perl-Critic-Policy-ProhibitOrReturn",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/utgwkk/Perl-Critic-Policy-ProhibitOrReturn.git",
+         "web" : "https://github.com/utgwkk/Perl-Critic-Policy-ProhibitOrReturn"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:UTGWKK",
    "x_serialization_backend" : "JSON::PP version 4.02",
