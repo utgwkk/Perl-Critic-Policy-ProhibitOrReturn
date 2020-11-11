@@ -2,10 +2,22 @@ package Perl::Critic::Policy::ProhibitOrReturn;
 use 5.008001;
 use strict;
 use warnings;
+use parent 'Perl::Critic::Policy';
+
+use Perl::Critic::Utils qw( :severities );
 
 our $VERSION = "0.01";
 
+sub default_severity { return $SEVERITY_MEDIUM; }
+sub applies_to       { return 'PPI::Statement'; }
 
+sub violates {
+    my ($self, $elem, undef) = @_;
+    
+    # TODO: implement it
+
+    return;
+}
 
 1;
 __END__
