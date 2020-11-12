@@ -3,20 +3,26 @@ use 5.008001;
 use strict;
 use warnings;
 use parent 'Perl::Critic::Policy';
+use constant DESC => '`or return` in source file';
+use constant EXPL => '`or return` is prohibited. Use `return ... unless ...` instead.';
 
 use Perl::Critic::Utils qw( :severities );
 
 our $VERSION = "0.01";
 
 sub default_severity { return $SEVERITY_MEDIUM; }
-sub applies_to       { return 'PPI::Statement'; }
+sub applies_to       { return 'PPI::Token::Word'; }
 
 sub violates {
     my ($self, $elem, undef) = @_;
-    
-    # TODO: implement it
 
-    return;
+    return if $elem->content ne 'return';
+
+    my $sprev = $elem->sprevious_sibling;
+    return if !$sprev;
+    return if $sprev->content ne 'or';
+
+    return $self->violation(DESC, EXPL, $elem->parent);
 }
 
 1;
