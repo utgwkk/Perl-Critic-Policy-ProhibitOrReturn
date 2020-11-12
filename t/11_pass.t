@@ -8,6 +8,11 @@ my @testcases = (
         filename    => 't/data/pass.pl',
         expected    => [],
     },
+    {
+        description => 'only `return` statement',
+        filename    => 't/data/only_return.pl',
+        expected    => [],
+    },
 );
 
 for my $testcase (@testcases) {
