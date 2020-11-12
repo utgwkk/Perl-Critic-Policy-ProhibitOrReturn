@@ -10,8 +10,10 @@ use Perl::Critic::Utils qw( :severities );
 
 our $VERSION = "0.01";
 
-sub default_severity { return $SEVERITY_MEDIUM; }
-sub applies_to       { return 'PPI::Token::Word'; }
+sub supported_parameters { return (); }
+sub default_severity     { return $SEVERITY_MEDIUM; }
+sub default_themes       { return qw(core bugs); }
+sub applies_to           { return 'PPI::Token::Word'; }
 
 sub violates {
     my ($self, $elem, undef) = @_;
