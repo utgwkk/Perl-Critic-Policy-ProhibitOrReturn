@@ -34,15 +34,33 @@ __END__
 
 =head1 NAME
 
-Perl::Critic::Policy::ProhibitOrReturn - It's new $module
+Perl::Critic::Policy::ProhibitOrReturn - Do not use `or return`
 
-=head1 SYNOPSIS
-
-    use Perl::Critic::Policy::ProhibitOrReturn;
+=head1 AFFILIATION
+ 
+This policy is a policy in the L<Perl::Critic::Policy::ProhibitOrReturn> distribution.
 
 =head1 DESCRIPTION
 
-Perl::Critic::Policy::ProhibitOrReturn is ...
+Avoid using C<or return>. Consider using equivalent C<if> (or C<unless>) statement instead.
+
+    # not ok
+    sub foo {
+        my ($x) = @_;
+        $x or return;
+        ...
+    }
+
+    # ok
+    sub foo {
+        my ($x) = @_;
+        return if !$x;
+        ...
+    }
+
+=head1 CONFIGURATION
+ 
+This Policy is not configurable except for the standard options.
 
 =head1 LICENSE
 
