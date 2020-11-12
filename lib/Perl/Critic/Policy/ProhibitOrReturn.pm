@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use parent 'Perl::Critic::Policy';
 use constant DESC => '`or return` in source file';
-use constant EXPL => '`or return` is prohibited. Use `return ... unless ...` instead.';
+use constant EXPL => '`or return` is prohibited. Use equivalent conditional statement instead.';
 
 use Perl::Critic::Utils qw( :severities );
 
