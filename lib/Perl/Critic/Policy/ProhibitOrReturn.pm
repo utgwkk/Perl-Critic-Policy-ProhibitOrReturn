@@ -8,7 +8,7 @@ use constant EXPL => '`or return` is prohibited. Use equivalent conditional stat
 
 use Perl::Critic::Utils qw( :severities );
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub supported_parameters { return (); }
 sub default_severity     { return $SEVERITY_MEDIUM; }
